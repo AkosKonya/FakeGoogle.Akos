@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Google Klon</title>
+
+    <style>
+
+        /* Nollställer marginaler och padding */
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        /* Hela sidan */
+        body{
+            background-color:#202124;
+            color:white;
+            font-family:Arial, sans-serif;
+
+            /* Flexbox */
+            display:flex;
+            flex-direction:column;
+
+            height:100vh;
+        }
+
+        /* Topmeny */
+        header{
+            display:flex;
+            justify-content:space-between;
+            padding:20px;
+        }
+
+        /* Vänster meny */
+        .left-menu a{
+            color:white;
+            text-decoration:none;
+            margin-right:20px;
+        }
+
+        /* Höger meny */
+        .right-menu{
+            display:flex;
+            align-items:center;
+            gap:20px;
+        }
+
+        .right-menu a{
+            color:white;
+            text-decoration:none;
+        }
+
+        /* Hover-effekt */
+        a:hover{
+            text-decoration:underline;
+        }
+
+        /* Logga in-knapp */
+        .login-btn{
+            background-color:#8ab4f8;
+            color:black;
+            border:none;
+            border-radius:25px;
+            padding:12px 20px;
+            cursor:pointer;
+        }
+
+        /* Huvudinnehåll */
+        main{
+            flex:1;
+
+            display:flex;
+            flex-direction:column;
+
+            justify-content:center;
+            align-items:center;
+        }
+
+        /* Google-logga */
+        #logo{
+            font-size:90px;
+            margin-bottom:25px;
+        }
+
+        /* Sökruta */
+        .search-box{
+            width:700px;
+            max-width:90%;
+
+            background-color:#4d5156;
+
+            border:none;
+            border-radius:30px;
+
+            padding:15px;
+
+            color:white;
+            font-size:18px;
+        }
+
+        /* När sökrutan får fokus */
+        .search-box:focus{
+            outline:none;
+        }
+
+        /* Knappar */
+        .buttons{
+            margin-top:30px;
+        }
+
+        .buttons button{
+            background-color:#303134;
+            color:white;
+
+            border:none;
+
+            padding:12px 20px;
+            margin:5px;
+
+            border-radius:5px;
+
+            cursor:pointer;
+        }
+
+        /* Hover på knappar */
+        .buttons button:hover{
+            background-color:#3c4043;
+        }
+
+        /* Footer */
+        footer{
+            background-color:#171717;
+        }
+
+        /* Sverige-raden */
+        .country{
+            padding:15px 30px;
+            border-bottom:1px solid #3c4043;
+        }
+
+        /* Nedersta delen */
+        .footer-links{
+            display:flex;
+            justify-content:space-between;
+
+            padding:20px 30px;
+        }
+
+        .footer-links a{
+            color:white;
+            text-decoration:none;
+            margin-right:20px;
+        }
+
+        .footer-links a:hover{
+            text-decoration:underline;
+        }
+
+        /* Responsiv design */
+        @media (max-width:600px){
+
+            #logo{
+                font-size:60px;
+            }
+
+            .search-box{
+                width:90%;
+            }
+
+            .footer-links{
+                flex-direction:column;
+                gap:15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Toppmeny -->
+    <header>
+
+        <div class="left-menu">
+            <a href="#">Om</a>
+            <a href="#">Store</a>
+        </div>
+
+        <div class="right-menu">
+            <a href="#">Gmail</a>
+            <a href="#">Bilder</a>
+
+            <!-- Apps-ikon -->
+            <span>☰</span>
+
+            <button class="login-btn">
+                Logga in
+            </button>
+        </div>
+
+    </header>
+
+    <!-- Huvudinnehåll -->
+    <main>
+
+        <!-- Google-logga -->
+        <h1 id="logo">Google</h1>
+
+        <!-- Sökruta -->
+        <input
+            class="search-box"
+            type="text"
+            placeholder="">
+
+        <!-- Knappar -->
+        <div class="buttons">
+            <button>Sök på Google</button>
+            <button>Jag har tur</button>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="country">
+            Sverige
+        </div>
+
+        <div class="footer-links">
+
+            <div>
+                <a href="#">Annonsering</a>
+                <a href="#">Företagslösningar</a>
+                <a href="#">Så fungerar Sök</a>
+            </div>
+
+            <div>
+                <a href="#">Integritet</a>
+                <a href="#">Villkor</a>
+                <a href="#">Inställningar</a>
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
