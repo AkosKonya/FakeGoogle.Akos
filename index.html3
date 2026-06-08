@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<!-- Talar om för webbläsaren att detta är ett HTML5-dokument -->
+<html lang="sv">
+<!-- Hela webbsidan, språket är satt till svenska -->
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Gör så att svenska tecken (å, ä, ö) visas korrekt -->
+
+    <title>Google Klon</title>
+    <!-- Texten som visas på webbläsarfliken -->
+
+    <style>
+
+        /* Nollställer standardmarginaler och padding på alla element */
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        /* Styling för hela sidan */
+        body{
+            background-color:#202124; /* Mörk bakgrund */
+            color:white; /* Vit text */
+            font-family:Arial, sans-serif;
+
+            /* Gör sidan till en flexbox-container */
+            display:flex;
+            flex-direction:column;
+
+            height:100vh; /* Hela skärmens höjd */
+        }
+
+        /* Toppmenyn */
+        header{
+            display:flex;
+            justify-content:space-between; /* Menyerna hamnar på varsin sida */
+            padding:20px;
+        }
+
+        /* Menyn till vänster */
+        .left-menu a{
+            color:white;
+            text-decoration:none;
+            margin-right:20px;
+        }
+
+        /* Menyn till höger */
+        .right-menu{
+            display:flex;
+            align-items:center; /* Centrera innehållet vertikalt */
+            gap:20px; /* Mellanrum mellan objekten */
+        }
+
+        .right-menu a{
+            color:white;
+            text-decoration:none;
+        }
+
+        /* När muspekaren är över en länk */
+        a:hover{
+            text-decoration:underline;
+        }
+
+        /* Logga in-knappen */
+        .login-btn{
+            background-color:#8ab4f8;
+            color:black;
+            border:none;
+            border-radius:25px; /* Rundade hörn */
+            padding:12px 20px;
+            cursor:pointer; /* Hand-ikon vid hover */
+        }
+
+        /* Huvudinnehållet */
+        main{
+            flex:1; /* Tar upp allt ledigt utrymme */
+
+            display:flex;
+            flex-direction:column;
+
+            justify-content:center; /* Centrera vertikalt */
+            align-items:center; /* Centrera horisontellt */
+        }
+
+        /* Google-loggan */
+        #logo{
+            font-size:90px;
+            margin-bottom:25px;
+        }
+
+        /* Sökrutan */
+        .search-box{
+            width:700px;
+            max-width:90%; /* Anpassar sig på mindre skärmar */
+
+            background-color:#4d5156;
+
+            border:none;
+            border-radius:30px;
+
+            padding:15px;
+
+            color:white;
+            font-size:18px;
+        }
+
+        /* Tar bort standardramen när man klickar i sökrutan */
+        .search-box:focus{
+            outline:none;
+        }
+
+        /* Container för knapparna */
+        .buttons{
+            margin-top:30px;
+        }
+
+        /* Styling för knapparna */
+        .buttons button{
+            background-color:#303134;
+            color:white;
+
+            border:none;
+
+            padding:12px 20px;
+            margin:5px;
+
+            border-radius:5px;
+
+            cursor:pointer;
+        }
+
+        /* Hover-effekt på knapparna */
+        .buttons button:hover{
+            background-color:#3c4043;
+        }
+
+        /* Footer längst ned */
+        footer{
+            background-color:#171717;
+        }
+
+        /* Raden som visar land */
+        .country{
+            padding:15px 30px;
+            border-bottom:1px solid #3c4043;
+        }
+
+        /* Nedersta delen av footern */
+        .footer-links{
+            display:flex;
+            justify-content:space-between;
+
+            padding:20px 30px;
+        }
+
+        .footer-links a{
+            color:white;
+            text-decoration:none;
+            margin-right:20px;
+        }
+
+        .footer-links a:hover{
+            text-decoration:underline;
+        }
+
+        /* Anpassningar för mobiltelefoner */
+        @media (max-width:600px){
+
+            /* Mindre logga */
+            #logo{
+                font-size:60px;
+            }
+
+            /* Sökrutan blir bredare relativt skärmen */
+            .search-box{
+                width:90%;
+            }
+
+            /* Footer-länkar staplas på varandra */
+            .footer-links{
+                flex-direction:column;
+                gap:15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Toppmeny -->
+    <header>
+
+        <!-- Vänstra menyn -->
+        <div class="left-menu">
+            <a href="#">Om</a>
+            <a href="#">Store</a>
+        </div>
+
+        <!-- Högra menyn -->
+        <div class="right-menu">
+            <a href="#">Gmail</a>
+            <a href="#">Bilder</a>
+
+            <!-- Enkel symbol som föreställer app-menyn -->
+            <span>☰</span>
+
+            <!-- Inloggningsknapp -->
+            <button class="login-btn">
+                Logga in
+            </button>
+        </div>
+
+    </header>
+
+    <!-- Sidans huvuddel -->
+    <main>
+
+        <!-- Google-logga -->
+        <h1 id="logo">Google</h1>
+
+        <!-- Sökruta -->
+        <input
+            class="search-box"
+            type="text"
+            placeholder="">
+            <!-- placeholder="" betyder att ingen hjälptekst visas -->
+
+        <!-- Knappar under sökrutan -->
+        <div class="buttons">
+            <button>Sök på Google</button>
+            <button>Jag har tur</button>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+
+        <!-- Land som visas längst upp i footern -->
+        <div class="country">
+            Sverige
+        </div>
+
+        <!-- Länkar längst ned -->
+        <div class="footer-links">
+
+            <!-- Vänster grupp länkar -->
+            <div>
+                <a href="#">Annonsering</a>
+                <a href="#">Företagslösningar</a>
+                <a href="#">Så fungerar Sök</a>
+            </div>
+
+            <!-- Höger grupp länkar -->
+            <div>
+                <a href="#">Integritet</a>
+                <a href="#">Villkor</a>
+                <a href="#">Inställningar</a>
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
